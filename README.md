@@ -75,24 +75,15 @@ O script utiliza requests.Session() para otimizar o ataque através das seguinte
 
 Possíveis Melhorias
 
-    Paralelismo: Uso de threading para múltiplas tentativas simultâneas.
+   Paralelismo: Uso de threading para múltiplas tentativas simultâneas.
 
-    Furtividade: Rotação de cabeçalhos User-Agent.
+   Furtividade: Rotação de cabeçalhos User-Agent.
 
-    Segurança: Captura de CSRF Tokens.
+   Segurança: Captura de CSRF Tokens.
 
-    Resiliência: Detecção de Rate Limiting (Status 429).
+   Resiliência: Detecção de Rate Limiting (Status 429).
 
-    Análise: Exportação de logs em JSON ou CSV.
+   Análise: Exportação de logs em JSON ou CSV.
 
-⚠️ Aviso Legal
-
-Este software foi desenvolvido exclusivamente para fins acadêmicos e educacionais. O uso desta ferramenta é permitido apenas em:
-
-    Ambientes locais de desenvolvimento.
-
-    Laboratórios de segurança controlados.
-
-    Sistemas com autorização explícita e por escrito dos proprietários.
 
 O uso não autorizado contra sistemas de terceiros é ilegal e viola as leis de segurança da informação vigentes. O autor não se responsabiliza pelo uso indevido deste código.
