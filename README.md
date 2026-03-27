@@ -1,31 +1,34 @@
-# Brute Force Tool - Laboratório de Autenticação Web
+Entendi o que aconteceu. Quando você copia e cola de algumas interfaces, o Markdown acaba vindo com blocos de texto "sujos" (como as palavras Bash ou Plaintext escritas antes dos códigos), além de perder a formatação de listas e cabeçalhos.
 
-## Descrição
+Aqui está o arquivo limpo, pronto para ser colado no seu README.md. Ele já está no padrão correto que o GitHub renderiza:
+Brute Force Tool - Laboratório de Autenticação Web
+Descrição
+
 Este projeto consiste em um script em Python desenvolvido para simular ataques de força bruta (Brute Force) em formulários de autenticação web. O objetivo é demonstrar, em ambiente controlado, como tentativas automatizadas de login funcionam e como mecanismos de defesa podem ser aplicados.
 
 A ferramenta utiliza conexões persistentes para melhorar a eficiência das requisições HTTP durante o processo de autenticação.
+Objetivos da Atividade
 
----
+    Compreender o funcionamento de autenticação web baseada em sessão.
 
-## Objetivos da Atividade
-* Compreender o funcionamento de autenticação web baseada em sessão
-* Simular tentativas de força bruta em ambiente controlado
-* Analisar impactos de ataques automatizados
-* Estudar técnicas básicas de mitigação
-* Praticar conceitos de segurança ofensiva com responsabilidade
+    Simular tentativas de força bruta em ambiente controlado.
 
----
+    Analisar impactos de ataques automatizados.
 
-## Estrutura do Projeto
+    Estudar técnicas básicas de mitigação.
 
-```text
+    Praticar conceitos de segurança ofensiva com responsabilidade.
+
+Estrutura do Projeto
+Plaintext
+
 .
 ├── main.py            # Script principal da ferramenta
-├── .gitignore         # Configurações de arquivos ignorados pelo Git
-├── app/               # Aplicação web vulnerável para testes
+├── .gitignore         # Arquivos ignorados pelo Git
+├── app/               # Aplicação web alvo (PHP)
 │   ├── login.php
 │   └── dashboard.php
-└── wordlists/         # Dicionários de usuários e senhas
+└── wordlists/         # Dicionários de dados
     ├── usuarios.txt
     └── senhas.txt
 
@@ -42,9 +45,7 @@ Software
 
 Dependências Python
 
-    requests
-
-Instalação:
+Instale a biblioteca necessária via terminal:
 Bash
 
 pip install requests
@@ -52,31 +53,25 @@ pip install requests
 Passo a Passo para Execução
 1. Configuração do Ambiente Alvo
 
-Hospede os arquivos da pasta app/ em um servidor web com suporte a PHP.
-
-Exemplo utilizando Apache no Linux:
+Hospede os arquivos da pasta app/ no seu servidor local. No Linux (Apache):
 Bash
 
 sudo cp -r app/* /var/www/html/
-
-Iniciar o servidor:
-Bash
-
 sudo systemctl start apache2
 
 A aplicação deverá estar acessível em: http://127.0.0.1/login.php
 2. Preparação das Wordlists
 
-Configure os arquivos dentro da pasta wordlists/ conforme necessário.
+Configure os arquivos em wordlists/. Exemplo:
 
-usuarios.txt:
+usuarios.txt
 Plaintext
 
 admin
 user
 teste
 
-senhas.txt:
+senhas.txt
 Plaintext
 
 123456
@@ -85,53 +80,40 @@ admin123
 
 3. Execução da Ferramenta
 
-No diretório raiz do projeto, execute o script:
+No diretório raiz do projeto, execute:
 Bash
 
 python3 main.py
 
 Funcionamento
 
-O script utiliza a biblioteca requests.Session() para otimizar o ataque, realizando as seguintes etapas:
+O script utiliza requests.Session() para otimizar o ataque através das seguintes etapas:
 
-    Leitura das Wordlists: Carregamento dos arquivos de texto para memória.
+    Leitura das Wordlists: Carregamento dos dados para a memória.
 
-    Combinação de Credenciais: Iteração entre usuários e senhas.
+    Combinação de Credenciais: Teste exaustivo de cada usuário contra cada senha.
 
-    Requisição Persistente: Envio de requisições POST mantendo o handshake HTTP ativo.
+    Requisição Persistente: Envio de POSTs mantendo o handshake HTTP ativo.
 
-    Validação de Resposta: Verificação de strings de sucesso (ex: "Desconectar") no corpo do HTML retornado.
+    Validação: Busca por strings de sucesso (ex: "Desconectar") na resposta.
 
-    Finalização: Interrupção imediata ao identificar um par de credenciais válido.
-
-Resultados Esperados
-
-    Identificação de credenciais válidas presentes nas wordlists.
-
-    Visualização do log de tentativas automatizadas no terminal.
-
-    Observação do comportamento do servidor alvo sob múltiplas requisições.
-
-    Compreensão prática da importância de proteções contra ataques de força bruta.
+    Finalização: Interrupção total ao encontrar um par válido.
 
 Possíveis Melhorias
 
-    Paralelismo: Implementação de threading para múltiplas tentativas simultâneas.
+    Paralelismo: Uso de threading para múltiplas tentativas simultâneas.
 
-    Furtividade: Rotação de cabeçalhos User-Agent para evitar assinaturas simples.
+    Furtividade: Rotação de cabeçalhos User-Agent.
 
-    Segurança: Suporte para captura e envio de CSRF Tokens.
+    Segurança: Captura de CSRF Tokens.
 
-    Resiliência: Detecção automática de Rate Limiting (Status Code 429).
+    Resiliência: Detecção de Rate Limiting (Status 429).
 
-    Análise: Exportação de logs em formatos JSON ou CSV.
-
-    Controle: Inclusão de delay configurável entre requisições e interface via argumentos CLI.
+    Análise: Exportação de logs em JSON ou CSV.
 
 Aviso Legal
 
-Este software foi desenvolvido exclusivamente para fins acadêmicos e educacionais.
-O uso desta ferramenta é permitido apenas em:
+Este software foi desenvolvido exclusivamente para fins acadêmicos e educacionais. O uso desta ferramenta é permitido apenas em:
 
     Ambientes locais de desenvolvimento.
 
