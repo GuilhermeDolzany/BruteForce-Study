@@ -1,27 +1,19 @@
-Entendi o que aconteceu. Quando você copia e cola de algumas interfaces, o Markdown acaba vindo com blocos de texto "sujos" (como as palavras Bash ou Plaintext escritas antes dos códigos), além de perder a formatação de listas e cabeçalhos.
+# Brute Force Tool - Laboratório de Autenticação Web
 
-Aqui está o arquivo limpo, pronto para ser colado no seu README.md. Ele já está no padrão correto que o GitHub renderiza:
-Brute Force Tool - Laboratório de Autenticação Web
-Descrição
-
+## Descrição
 Este projeto consiste em um script em Python desenvolvido para simular ataques de força bruta (Brute Force) em formulários de autenticação web. O objetivo é demonstrar, em ambiente controlado, como tentativas automatizadas de login funcionam e como mecanismos de defesa podem ser aplicados.
 
 A ferramenta utiliza conexões persistentes para melhorar a eficiência das requisições HTTP durante o processo de autenticação.
-Objetivos da Atividade
 
-    Compreender o funcionamento de autenticação web baseada em sessão.
+## Objetivos da Atividade
+* Compreender o funcionamento de autenticação web baseada em sessão.
+* Simular tentativas de força bruta em ambiente controlado.
+* Analisar impactos de ataques automatizados.
+* Estudar técnicas básicas de mitigação.
+* Praticar conceitos de segurança ofensiva com responsabilidade.
 
-    Simular tentativas de força bruta em ambiente controlado.
-
-    Analisar impactos de ataques automatizados.
-
-    Estudar técnicas básicas de mitigação.
-
-    Praticar conceitos de segurança ofensiva com responsabilidade.
-
-Estrutura do Projeto
-Plaintext
-
+## Estrutura do Projeto
+```text
 .
 ├── main.py            # Script principal da ferramenta
 ├── .gitignore         # Arquivos ignorados pelo Git
@@ -31,7 +23,7 @@ Plaintext
 └── wordlists/         # Dicionários de dados
     ├── usuarios.txt
     └── senhas.txt
-
+```
 Requisitos
 Software
 
@@ -46,39 +38,21 @@ Software
 Dependências Python
 
 Instale a biblioteca necessária via terminal:
-Bash
 
-pip install requests
+    pip install requests
 
-Passo a Passo para Execução
-1. Configuração do Ambiente Alvo
+##Passo a Passo para Execução:
+
+###1. Configuração do Ambiente Alvo
 
 Hospede os arquivos da pasta app/ no seu servidor local. No Linux (Apache):
-Bash
 
-sudo cp -r app/* /var/www/html/
-sudo systemctl start apache2
+    sudo cp -r app/* /var/www/html/
+    sudo systemctl start apache2
 
 A aplicação deverá estar acessível em: http://127.0.0.1/login.php
-2. Preparação das Wordlists
 
-Configure os arquivos em wordlists/. Exemplo:
-
-usuarios.txt
-Plaintext
-
-admin
-user
-teste
-
-senhas.txt
-Plaintext
-
-123456
-password
-admin123
-
-3. Execução da Ferramenta
+###2. Execução da Ferramenta
 
 No diretório raiz do projeto, execute:
 Bash
@@ -111,7 +85,7 @@ Possíveis Melhorias
 
     Análise: Exportação de logs em JSON ou CSV.
 
-Aviso Legal
+⚠️ Aviso Legal
 
 Este software foi desenvolvido exclusivamente para fins acadêmicos e educacionais. O uso desta ferramenta é permitido apenas em:
 
