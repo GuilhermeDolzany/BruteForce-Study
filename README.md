@@ -59,7 +59,7 @@ Bash
 
     python3 main.py
 
-Funcionamento
+### Funcionamento
 
 O script utiliza requests.Session() para otimizar o ataque através das seguintes etapas:
 
