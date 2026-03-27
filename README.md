@@ -43,7 +43,7 @@ Instale a biblioteca necessária via terminal:
 
 ##Passo a Passo para Execução:
 
-###1. Configuração do Ambiente Alvo
+### 1. Configuração do Ambiente Alvo
 
 Hospede os arquivos da pasta app/ no seu servidor local. No Linux (Apache):
 
@@ -52,7 +52,7 @@ Hospede os arquivos da pasta app/ no seu servidor local. No Linux (Apache):
 
 A aplicação deverá estar acessível em: http://127.0.0.1/login.php
 
-###2. Execução da Ferramenta
+### 2. Execução da Ferramenta
 
 No diretório raiz do projeto, execute:
 Bash
