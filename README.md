@@ -57,7 +57,7 @@ A aplicação deverá estar acessível em: http://127.0.0.1/login.php
 No diretório raiz do projeto, execute:
 Bash
 
-python3 main.py
+    python3 main.py
 
 Funcionamento
 
