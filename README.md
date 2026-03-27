@@ -73,7 +73,7 @@ O script utiliza requests.Session() para otimizar o ataque através das seguinte
 
     Finalização: Interrupção total ao encontrar um par válido.
 
-Possíveis Melhorias
+### Possíveis Melhorias
 
    Paralelismo: Uso de threading para múltiplas tentativas simultâneas.
 
